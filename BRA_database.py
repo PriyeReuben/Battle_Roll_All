@@ -157,17 +157,23 @@ def fill_creature_table():
     conn = sqlite3.connect('BRA.db')
     cur = conn.cursor()
 
-    add_creature() #check if the table is empty before doing this
+    #add_creature() #check if the table is empty before doing this
     while True:
         x = str(input("""
             Press A to add a new creature.\n
             Press C to copy an existing creature.\n
+            Press D to delete an existing creature. \n
+            Press S to show the Creature table. \n
             Press Q to quit.\n
             """))
         if x == 'a' or x == 'A':
             add_creature()
         elif x == 'c' or x == 'C':
             copy_creature()
+        elif x == 'd' or x == 'D':
+            delete_creature()
+        elif x == 's' or x == 'S':
+            display_creature_table()
         elif x == 'q' or x == 'Q':
             break
         else:
