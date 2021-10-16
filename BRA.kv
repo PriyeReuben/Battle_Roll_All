@@ -1,9 +1,34 @@
-<MyGridLayout>
+Battle_Roll_All_GUI:
 
-    GridLayout:
-        cols: 8
+<Battle_cell@BoxLayout>:
+    orientation: "vertical"
+    padding: "5dp"
 
 
-        Button:
-            id: button
-            text: "This is a button"
+
+    Button:
+        #text: root.attack_result
+        size_hint: 1, .375
+        #height: .375
+    Button:
+        text: "damage roll 1"
+        size_hint: 1, .125
+    Button:
+        text: "damage roll 2"
+        size_hint: 1, .125
+    Button:
+        text: "damage roll 3"
+        size_hint: 1, .125
+    ToggleButton:
+        text: "Active/Inactive"
+        size_hint: 1, .125
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint: 1, .125
+
+        ToggleButton:
+            text: "Advantage"
+        ToggleButton:
+            text: "Disadvantage"
+
+

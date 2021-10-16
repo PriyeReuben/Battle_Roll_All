@@ -1,34 +1,33 @@
 from kivy.app import App
-from kivy.uix.label import Label
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.textinput import TextInput
+from kivy.properties import StringProperty, BooleanProperty
+from kivy.uix.widget import Widget
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
-import random as rand
-import time
+from kivy.uix.anchorlayout import AnchorLayout
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.stacklayout import StackLayout
+from kivy.metrics import dp
 
+class Battle_Roll_All_GUI(BoxLayout):
 
-class MyGridLayout(GridLayout):
     def __init__(self, **kwargs):
-        super(MyGridLayout, self).__init__(**kwargs)
-
-        noc = 100
-        self.cols = noc #I am a fool
-
-        for x in range(1,(noc * 4)+1):
-            a = "{0:.1g}".format(rand.random())
-            b = "{0:.1g}".format(rand.random())
-            c = "{0:.1g}".format(rand.random())
-            d = "{0:.1g}".format(rand.random())
-            self.add_widget(Button(background_normal = "", background_color = (a,b,c,d) ))
+        super().__init__(**kwargs)
+        #self.attack_result = StringProperty("You rolled to hit.")
 
 
 
 
 
+        for player in range(4):
+            cell = Battle_cell(size_hint = (1, 1))
+            self.add_widget(cell)
 
-class AwesomeApp(App):
-    def build(self):
-        return MyGridLayout()
 
-if __name__ == "__main__":
-    AwesomeApp().run()
+class Battle_cell(BoxLayout):
+    pass
+
+class BRAApp(App):
+    pass
+
+
+BRAApp().run()
