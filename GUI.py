@@ -19,7 +19,7 @@ class Battle_Roll_All_GUI(BoxLayout):
 
 
         for player in range(4):
-            cell = Battle_cell(size_hint = (1, 1))
+            cell = Battle_cell(size_hint = (1, .25), pos_hint = {'top': 1})
             self.add_widget(cell)
 
 
